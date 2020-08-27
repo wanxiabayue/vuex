@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>count：{{ count }}</h1>
-    <h2>counts：{{ counts }}</h2>
+    <h2>dataCount：{{ dataCount }}</h2>
     <button @click="decreaseCount">add-</button>
     <button @click="increaseCount">add+</button>
   </div>
@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       // 在data接收的state数据不能动态响应
-      counts: this.$store.state.count,
+      dataCount: this.$store.state.count,
     };
   },
   computed: {

@@ -1,10 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <aside id="nav">
+      <router-link to="/">State |</router-link>
+      <router-link to="/mapState">mapState</router-link>|
+      <router-link to="/getters">Getters</router-link>|
+      <router-link to="/mutations">Mutations</router-link>|
+      <router-link to="/actions">Actions</router-link>|
+      <router-link to="/eventBus">EventBus</router-link>|
+      <router-link to="/css3/svg">SVG</router-link>
+      <!-- <router-link :to="{name:'Svg'}">SVG</router-link> -->
+    </aside>
+    <header class="header">我是头部</header>
+    <!-- <router-view /> -->
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
+
+    <footer class="footer">我是脚部</footer>
   </div>
 </template>
 
@@ -28,5 +40,21 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.footer {
+  position: sticky;
+  bottom: 20px;
+}
+.header {
+  position: sticky;
+  top: 20px;
 }
 </style>
