@@ -12,6 +12,10 @@
       兄弟组件2：
       <Brother2 />
     </h4>
+    <h4>
+      兄弟组件3：
+      <Brother3 />
+    </h4>
     <h6 v-for="item in lists" :key="item.number">{{item.number}}</h6>
   </div>
 </template>
@@ -21,27 +25,22 @@
 import { EventBus } from "../event_bus.js";
 import Brother1 from "./Brother1.vue";
 import Brother2 from "./Brother2.vue";
+import Brother3 from "./Brother3.vue";
 export default {
   components: {
     Brother1,
     Brother2,
+    Brother3,
   },
   data() {
     return {
-      name: "",
+      name: "初始化数据",
       lists: Array(100)
         .fill("0")
         .map((v, i) => {
           return { number: i };
         }),
     };
-  },
-  created() {
-    // this.lists = Array(100)
-    //   .fill("0")
-    //   .map((v, i) => {
-    //     return { number: i };
-    //   });
   },
   methods: {
     handleBrother1() {

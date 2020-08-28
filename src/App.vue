@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <aside id="nav">
-      <router-link to="/">State |</router-link>
-      <router-link to="/mapState">mapState</router-link>|
-      <router-link to="/getters">Getters</router-link>|
-      <router-link to="/mutations">Mutations</router-link>|
-      <router-link to="/actions">Actions</router-link>|
+      <router-link to="/">Life</router-link>|
+      <router-link to="/state">State |</router-link>
+      <router-link to="/vuex/mapState">mapState</router-link>|
+      <router-link to="/vuex/getters">Getters</router-link>|
+      <router-link to="/vuex/mutations">Mutations</router-link>|
+      <router-link to="/vuex/actions">Actions</router-link>|
       <router-link to="/eventBus">EventBus</router-link>|
       <router-link to="/css3/svg">SVG</router-link>
       <!-- <router-link :to="{name:'Svg'}">SVG</router-link> -->

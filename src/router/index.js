@@ -3,53 +3,57 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 页面初始化，默认组件
-import State from '../views/State.vue'
+import State from '../views/vuex/State.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'State',
-    component: State
+    name: 'Life',
+    component: () => import('../views/lifeCycle.vue')
   },
   {
     path: '/index',
-    name: 'State',
-    // 重定向
-    redirect: '/',
+    name: '',
+    // 重定向(通过redirect重定向的),2种常见方式
+    // redirect: '/eventBus',
+    redirect: { name: 'EventBus' },
     component: State
   },
   {
-    path: '/mapState',
+    path: '/state',
+    name: 'State',
+    component: State
+  },
+  {
+    path: '/vuex/mapState',
     name: 'MapState',
-
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/MapState.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/vuex/MapState.vue')
   },
   {
-    path: '/getters',
+    path: '/vuex/getters',
     name: 'Getters',
-    component: () => import('../views/Getters.vue')
+    component: () => import('../views/vuex/Getters.vue')
   },
   {
-    path: '/mutations',
+    path: '/vuex/mutations',
     name: 'Mutations',
-    component: () => import('../views/Mutations.vue')
+    component: () => import('../views/vuex/Mutations.vue')
   },
   {
-    path: '/actions',
+    path: '/vuex/actions',
     name: 'Actions',
-    component: () => import('../views/Actions.vue')
+    component: () => import('../views/vuex/Actions.vue')
   },
   {
     path: '/eventBus',
     name: 'EventBus',
     // 别名
     alias: "/bus",
-
     component: () => import('../views/EventBus.vue')
   },
   {
